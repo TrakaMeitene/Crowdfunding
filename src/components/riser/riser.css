@@ -1,0 +1,20 @@
+.riser{
+    width:50%;
+    border:0.7px solid hsl(0, 0%, 57%);
+height:300px;
+position:absolute;
+margin:0 25% 0 25%;
+margin-top: -100px;
+background-color: white;
+border-radius: 20px;
+}
+.logo{
+    background-image: url(/Users/sandra/crowdfunding/src/utilities/logo-mastercraft.svg);
+    background-size: cover;
+    position:absolute;
+    margin:-4% 45% 0 45%;
+    width:65px;
+    height:65px;
+    border-radius: 50%;
+    
+}

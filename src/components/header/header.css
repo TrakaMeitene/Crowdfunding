@@ -1,0 +1,34 @@
+.header{
+    width: 100%;
+    height: 40vh;
+    background-image: url(../../utilities/image-hero-desktop.jpg);
+    background-size: cover;
+}
+nav{
+    width:100%;
+    height: 100px;
+    padding: 0 8% 0 10%;
+    display:flex;
+    flex-direction: row;
+  align-items:  center;
+  justify-content: space-between;
+  padding-top:5%;
+}
+p{
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 700;
+    color:white;
+    font-size: 2em;
+}
+ul{
+    width:30%;
+    text-align: right;
+    color:white;
+}
+ul li{
+display: inline;
+text-decoration: none;
+padding-right:10%;
+font-weight: 500;
+font-size: 18px;
+}
