@@ -1,7 +1,7 @@
 .riser{
     width:50%;
-    border:0.7px solid hsl(0, 0%, 57%);
-height:300px;
+    border:1px solid hsl(0, 0%, 57%);
+/* height:300px; */
 position:absolute;
 margin:0 25% 0 25%;
 margin-top: -100px;
@@ -9,12 +9,48 @@ background-color: white;
 border-radius: 20px;
 }
 .logo{
-    background-image: url(/Users/sandra/crowdfunding/src/utilities/logo-mastercraft.svg);
+    background-image: url(../../utilities/logo-mastercraft.svg);
     background-size: cover;
     position:absolute;
     margin:-4% 45% 0 45%;
     width:65px;
     height:65px;
     border-radius: 50%;
-    
+}
+h2{
+    text-align: center;
+    padding-top:40px;
+    font-size: 1.7em;
+    font-weight:700;
+}
+p{
+    color:hsl(0, 0%, 57%);
+}
+button{
+    padding:15px 25px 15px 25px;
+    background-color: hsl(176, 72%, 28%);
+    border-radius:50px;
+    border:none;
+    color: white;
+    font-weight:700;
+}
+.buttons{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items:  center;
+    justify-content: space-between;
+    padding: 20px 30px 30px 30px;
+}
+.bookmark{
+    background-color: hsl(0, 0%, 95%);
+    color:hsl(176, 72%, 28%);
+    width:160px;
+    padding-left:60px;
+    background-image: url(../../utilities/icon-bookmark.svg);
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+.active-state{
+    background-image: url(../../utilities/icon-bookmark\ copy.svg);
 }
