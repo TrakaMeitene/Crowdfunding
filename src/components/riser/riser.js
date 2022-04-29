@@ -8,13 +8,13 @@ function Riser(){
     let booked2 = "Bookmarked"
     let greenBookmark = "bookmark active-state"
 
-    const [classe, setClass] = useState(false)
+    const [toggle, setToggle] = useState(false)
 
-    useEffect(()=> { }, [classe]);
+    useEffect(()=> { }, [toggle]);
 
     const booked=()=>{
     return( 
-        setClass(current => !current)
+        setToggle(current => !current)
     )}
 
     return(
@@ -24,7 +24,7 @@ function Riser(){
     <p style={{textAlign: "center"}}>A beautirul & handcrarted monitor stand to reduce neck and eve strain.</p>
 <div className="buttons">
     <button>Back this project</button>
-    <button onClick={booked} className={classe ? "bookmark" : greenBookmark}>{classe ? book: booked2}</button>
+    <button onClick={booked} className={toggle ? "bookmark" : greenBookmark}>{toggle ? book: booked2}</button>
     </div>
 </div>
 )
