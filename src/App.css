@@ -1,8 +1,13 @@
 *{
   padding:0;
   box-sizing: border-box;
+
 }
 body{
   font-family: 'Commissioner', sans-serif;
-  background-color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 92%);
+ height:100vh;
 }
+/* body{
+  mask-image: linear-gradient(black, transparent);
+} */

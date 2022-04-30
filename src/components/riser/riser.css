@@ -1,6 +1,6 @@
 .riser{
     width:50%;
-    border:1px solid hsl(0, 0%, 57%);
+    border:1px solid hsl(0, 0%, 77%);
 /* height:300px; */
 position:absolute;
 margin:0 25% 0 25%;
@@ -54,3 +54,4 @@ button{
 .active-state{
     background-image: url(../../utilities/icon-bookmark\ copy.svg);
 }
+
