@@ -21,7 +21,7 @@
     border-radius:10px;
 padding: 20px;
 display:flex;
-flex-direction: row;
+flex-direction: column;
 margin-bottom: 20px;
 
 }
@@ -56,4 +56,37 @@ h4{
 }
 b{
     margin-right:10px;
+}
+.green{
+    border:1px solid hsl(176, 72%, 38%);
+    width: 100%;
+    border-radius:10px;
+padding: 20px;
+display:flex;
+flex-direction: row;
+margin-bottom: 20px;
+
+}
+.pledge{
+    border-top: 1px solid grey;
+    width:107%;
+    display:flex;
+    flex-direction: row;
+    margin-left:-3.5%;
+ padding-top:20px;
+}
+.row{
+    display:flex;
+    flex-direction: row;
+}
+.inputPledge{
+    border:1px solid grey;
+    width:15%;
+    border-radius:30px;
+    padding:10px;
+    text-align: right;
+    
+}
+input[type=number]:focus {
+    outline: hsl(176, 72%, 48%) solid 1px;
 }
