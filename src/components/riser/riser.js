@@ -1,12 +1,12 @@
 import "./riser.css"
-import React,  { useEffect, useState } from "react"
+import React,  { useEffect, useState} from "react"
 import ModalFund from "../modalFund/modalFund"
 
 function Riser(){
+
     let book = "Bookmark"
     let booked2 = "Bookmarked"
     let greenBookmark = "bookmark active-state"
-
 
     const [toggle, setToggle] = useState(true);
     const [visible, setVisible] = useState(false);
@@ -31,7 +31,7 @@ function Riser(){
     <button onClick={modalopen}>Back this project</button>
     <button onClick={booked} className={toggle ? "bookmark" : greenBookmark}>{toggle ? book: booked2}</button>
     </div>
-    <ModalFund visible={visible}/>
+    <ModalFund visible={visible} />
 </div>
 )
 }

@@ -3,22 +3,17 @@ import "./modalFund.css"
 
 function ModalFund(visible){
     let selected = ""
-
-    const [checked, setChecked] = useState(false)
     const [sel, setSel] = useState(selected)
-
   
  const check=(e)=>{
    selected = e.target.value
    setSel(selected)
  }
+ 
 
- const close =()=>{
-     console.log("nospiests")
- }
     return(
 <div className={visible.visible ? "modal" : "modalNone"}>
-    <p style={{float: "right", cursor: "pointer", fontWeight: "bold", marginTop: "-10px", fontSize: "20px"}} onClick={close}>x</p>
+    <p className="close">x</p>
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 <div className={sel === "1" ? "green" : "borderedWindows"}>

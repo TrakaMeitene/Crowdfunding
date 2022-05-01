@@ -102,3 +102,10 @@ input[type=number]:focus {
 .noShow{
     display:none;
 }
+.close{
+    float: right;
+     cursor: pointer;
+     font-weight: bold;
+     margin-Top: -10px;
+     font-Size: 20px;
+}
