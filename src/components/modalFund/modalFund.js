@@ -1,8 +1,6 @@
 import React, { useState} from "react";
 import "./modalFund.css"
 
-
-
 function ModalFund(visible){
     let selected = ""
 
@@ -14,13 +12,18 @@ function ModalFund(visible){
    selected = e.target.value
    setSel(selected)
  }
+
+ const close =()=>{
+     console.log("nospiests")
+ }
     return(
 <div className={visible.visible ? "modal" : "modalNone"}>
+    <p style={{float: "right", cursor: "pointer", fontWeight: "bold", marginTop: "-10px", fontSize: "20px"}} onClick={close}>x</p>
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 <div className={sel === "1" ? "green" : "borderedWindows"}>
 <div className="row">
-    <input type="radio" value="1" name="yes" onChange={check}/>
+    <input type="radio" value="1" name="yes" onChange={check} />
     <div>
     <h4>Pledge with no reward</h4>
     <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
@@ -42,6 +45,15 @@ function ModalFund(visible){
 <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</p>
 </div>
 </div>
+{/* window that opens when item selected */}
+<div className={sel === "2" ? "pledge" : "noShow"}>
+    <p>Enter your pledge</p>
+    <form>
+    <input type="number" className="inputPledge" min="25" step="1" defaultValue="25"/>
+    <button type="submit">Continue</button>
+    </form>
+    </div>
+
 </div>
 
 <div className={sel === "3" ? "green" : "borderedWindows"}>
@@ -59,13 +71,17 @@ function ModalFund(visible){
 You'll be added to our Backer member list. Shipping is included.</p>
 </div>
 </div>
-<div className="pledge">
+<div className={sel === "3" ? "pledge" : "noShow"}>
     <p>Enter your pledge</p>
-    <input type="number" className="inputPledge" placeholder="$"/>
+    <form>
+    <input type="number" className="inputPledge" min="75" step="1" defaultValue="75"/>
+    <button type="submit">Continue</button>
+    </form>
     </div>
 </div>
 
 <div className="borderedWindows">
+<div className="row">
     <input type="radio" id="4" disabled/>
     <div>
    <div className="modal-header">
@@ -77,6 +93,7 @@ You'll be added to our Backer member list. Shipping is included.</p>
        </div>
 <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal
 thank you. You'll be added to our Backer member list. Shipping is included,</p>
+</div>
 </div>
 </div>
 
