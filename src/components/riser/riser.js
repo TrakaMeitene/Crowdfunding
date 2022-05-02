@@ -21,7 +21,9 @@ function Riser(){
         setVisible(true)
          document.body.className = "mask"
     }
-
+const handleCallback=(visi)=>{
+console.log("nostrada", visi)
+}
     return(
 <div className="riser">
     <div className="logo"/>
@@ -31,7 +33,7 @@ function Riser(){
     <button onClick={modalopen}>Back this project</button>
     <button onClick={booked} className={toggle ? "bookmark" : greenBookmark}>{toggle ? book: booked2}</button>
     </div>
-    <ModalFund visible={visible} />
+    <ModalFund visible={visible}   parentCallback={handleCallback}/>
 </div>
 )
 }

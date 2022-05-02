@@ -4,16 +4,20 @@ import "./modalFund.css"
 function ModalFund(visible){
     let selected = ""
     const [sel, setSel] = useState(selected)
+    const [visibles, setVisibles] = useState(visible)
   
  const check=(e)=>{
    selected = e.target.value
    setSel(selected)
  }
  
+ const close=(event)=>{
+  console.log(event)
+}
 
     return(
 <div className={visible.visible ? "modal" : "modalNone"}>
-    <p className="close">x</p>
+    <p className="close" onclick={close}>x</p>
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 <div className={sel === "1" ? "green" : "borderedWindows"}>
