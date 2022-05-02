@@ -109,3 +109,9 @@ input[type=number]:focus {
      margin-Top: -10px;
      font-Size: 20px;
 }
+.left{
+    color: red;
+}
+b{
+    color: black;
+}

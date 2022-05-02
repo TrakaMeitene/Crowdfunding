@@ -1,23 +1,18 @@
 import React, { useState} from "react";
 import "./modalFund.css"
 
-function ModalFund(visible){
+function ModalFund({visible, handleClick}){
     let selected = ""
     const [sel, setSel] = useState(selected)
-    const [visibles, setVisibles] = useState(visible)
   
  const check=(e)=>{
    selected = e.target.value
    setSel(selected)
  }
  
- const close=(event)=>{
-  console.log(event)
-}
-
     return(
-<div className={visible.visible ? "modal" : "modalNone"}>
-    <p className="close" onclick={close}>x</p>
+<div className={visible ? "modal" : "modalNone"}>
+    <p className="close" onClick={handleClick}>x</p>
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 <div className={sel === "1" ? "green" : "borderedWindows"}>
@@ -39,7 +34,7 @@ function ModalFund(visible){
        <h4>Bamboo Stand</h4>
        <p>Pledge $25 or more</p>
        </span>
-       <p><b>101</b>left</p>
+       <p className="left"><b>101</b>left</p>
        </div>
 <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</p>
 </div>

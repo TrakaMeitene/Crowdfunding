@@ -1,5 +1,5 @@
 import "./riser.css"
-import React,  { useEffect, useState} from "react"
+import React,  { useEffect, useState, useCallback} from "react"
 import ModalFund from "../modalFund/modalFund"
 
 function Riser(){
@@ -8,7 +8,7 @@ function Riser(){
     let booked2 = "Bookmarked"
     let greenBookmark = "bookmark active-state"
 
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
     const [visible, setVisible] = useState(false);
 
     useEffect(()=> { }, [toggle]);
@@ -18,12 +18,16 @@ function Riser(){
     )}
 
     const modalopen=()=>{
-        setVisible(true)
+        return (
+        setVisible(true),
          document.body.className = "mask"
+        )
     }
-const handleCallback=(visi)=>{
-console.log("nostrada", visi)
-}
+
+const handleClick = useCallback(() => {
+   setVisible(false)
+  }, []);
+
     return(
 <div className="riser">
     <div className="logo"/>
@@ -33,7 +37,7 @@ console.log("nostrada", visi)
     <button onClick={modalopen}>Back this project</button>
     <button onClick={booked} className={toggle ? "bookmark" : greenBookmark}>{toggle ? book: booked2}</button>
     </div>
-    <ModalFund visible={visible}   parentCallback={handleCallback}/>
+    <ModalFund visible={visible}  handleClick={handleClick}/>
 </div>
 )
 }
