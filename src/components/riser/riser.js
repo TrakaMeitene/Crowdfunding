@@ -8,7 +8,7 @@ function Riser(){
     let booked2 = "Bookmarked"
     let greenBookmark = "bookmark active-state"
 
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
     const [visible, setVisible] = useState(false);
 
     useEffect(()=> { }, [toggle]);
