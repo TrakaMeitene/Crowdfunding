@@ -1,6 +1,7 @@
 import "./riser.css"
 import React,  { useEffect, useState, useCallback} from "react"
 import ModalFund from "../modalFund/modalFund"
+import Counter from "../counter/counter"
 
 function Riser(){
 
@@ -10,6 +11,7 @@ function Riser(){
 
     const [toggle, setToggle] = useState(true);
     const [visible, setVisible] = useState(false);
+    const [value, setValue] = useState();
 
     useEffect(()=> { }, [toggle]);
     const booked=()=>{
@@ -24,11 +26,13 @@ function Riser(){
         )
     }
 
-const handleClick = useCallback(() => {
+const handleClick = useCallback((value25, ) => {
    setVisible(false)
+   setValue(value25)
   }, []);
 
     return(
+        <>
 <div className="riser">
     <div className="logo"/>
     <h2>Mastercraft Bamboo Monitor Riser</h2>
@@ -36,9 +40,12 @@ const handleClick = useCallback(() => {
 <div className="buttons">
     <button onClick={modalopen}>Back this project</button>
     <button onClick={booked} className={toggle ? "bookmark" : greenBookmark}>{toggle ? book: booked2}</button>
-    </div>
-    <ModalFund visible={visible}  handleClick={handleClick}/>
+    </div>   
 </div>
+<ModalFund visible={visible}  handleClick={handleClick} />
+<Counter value={value}/>
+  </>
+
 )
 }
 export default Riser

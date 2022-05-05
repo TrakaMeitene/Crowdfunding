@@ -1,0 +1,52 @@
+.counter{
+    width:50%;
+    border:1px solid hsl(0, 0%, 77%);
+position:absolute;
+margin:13% 25% 0 25%;
+background-color: white;
+border-radius:20px;
+display:flex;
+flex-direction: column;
+padding:20px;
+}
+.count{
+    display:flex;
+    flex-direction: row;
+    height:100px;
+}
+.count div:not(.last){
+border-right: 1px solid hsl(0, 0%, 77%);
+}
+
+.count h2, .counter p {
+    text-align: left;
+    margin:0;
+    padding:0;
+}
+.count div{
+    width: 33.3%;
+    padding:20px;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+    background: hsl(0, 0%, 77%);
+    height: 0.8rem;
+    border-radius:20px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -12px; /* Centers thumb on the track */
+    background-color: #5cd5eb;
+    height: 2rem;
+    width: 1rem;     
+ }
+
+ 

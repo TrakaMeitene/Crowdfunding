@@ -1,23 +1,47 @@
-import React, { useState} from "react";
+import React, { useState, useCallback} from "react";
 import "./modalFund.css"
+import ModalSubmit from "../modalSubmit/modalSubmit";
 
-function ModalFund({visible, handleClick}){
+function ModalFund({visible, handleClick, pledge, pledgetwo}){
     let selected = ""
     const [sel, setSel] = useState(selected)
+
+    const [pledgeValue1, setPledgeValue] = useState(25);
+    const [pledgeValue2, setPledgeValue2] = useState(75);
+
+    const [submitModal, setSubmitModal] = useState(false);
   
  const check=(e)=>{
-   selected = e.target.value
+   selected = e.target.id
    setSel(selected)
  }
- 
+const pledge1 = (e)=>{
+    setPledgeValue(e.target.value)
+}
+
+const pledge2 = (e)=>{
+    setPledgeValue2(e.target.value)
+}
+
+ const submit =()=>{
+     console.log("strada")
+     handleClick(pledgeValue1)
+     setSubmitModal(true)
+ }
+
+ const close = useCallback(() => {
+    setSubmitModal(false)
+   }, []);
+
     return(
+        <>
 <div className={visible ? "modal" : "modalNone"}>
     <p className="close" onClick={handleClick}>x</p>
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 <div className={sel === "1" ? "green" : "borderedWindows"}>
 <div className="row">
-    <input type="radio" value="1" name="yes" onChange={check} />
+    <input type="radio" id="1" name="yes" onChange={check} />
     <div>
     <h4>Pledge with no reward</h4>
     <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
@@ -27,7 +51,7 @@ function ModalFund({visible, handleClick}){
 
 <div className={sel === "2" ? "green" : "borderedWindows"}>
 <div className="row">
-    <input type="radio" value="2" name="yes" onChange={check}/>
+    <input type="radio" id="2" name="yes" onChange={check}/>
     <div>
    <div className="modal-header">
        <span>
@@ -42,17 +66,15 @@ function ModalFund({visible, handleClick}){
 {/* window that opens when item selected */}
 <div className={sel === "2" ? "pledge" : "noShow"}>
     <p>Enter your pledge</p>
-    <form>
-    <input type="number" className="inputPledge" min="25" step="1" defaultValue="25"/>
-    <button type="submit">Continue</button>
-    </form>
+    <input type="number" className="inputPledge" min="25" step="1" defaultValue="25" onChange={pledge1}/>
+    <button type="submit" onClick ={submit} >Continue</button>
     </div>
 
 </div>
 
 <div className={sel === "3" ? "green" : "borderedWindows"}>
     <div className="row">
-    <input type="radio" value="3" name="yes" onChange={check}/>
+    <input type="radio" id="3" name="yes" onChange={check}/>
     <div>
    <div className="modal-header">
        <span>
@@ -68,8 +90,8 @@ You'll be added to our Backer member list. Shipping is included.</p>
 <div className={sel === "3" ? "pledge" : "noShow"}>
     <p>Enter your pledge</p>
     <form>
-    <input type="number" className="inputPledge" min="75" step="1" defaultValue="75"/>
-    <button type="submit">Continue</button>
+    <input type="number" className="inputPledge" min="75" step="1" defaultValue="75" onChange={pledge2}/>
+    <button type="submit" >Continue</button>
     </form>
     </div>
 </div>
@@ -92,6 +114,8 @@ thank you. You'll be added to our Backer member list. Shipping is included,</p>
 </div>
 
 </div>
+ {submitModal ? <ModalSubmit close={close} /> : ""}
+ </>
     )
 }
 

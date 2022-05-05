@@ -1,0 +1,19 @@
+.modalSubmit{
+    width: 40%;
+    height:auto;
+    margin: 0 30% 0 30%;
+    background-color: white;
+    border-radius: 20px;
+    position:absolute;
+    top: 20%;
+    padding: 30px;
+    text-align: center;
+    z-index:3;
+    border:1px solid grey;
+}
+.modalSubmit button{
+margin-top:40px;
+}
+.modalSubmit h2{
+    padding-top: 0; 
+}
