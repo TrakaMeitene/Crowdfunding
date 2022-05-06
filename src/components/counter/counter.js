@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import "../counter/counter.css";
 
 function Counter({value}){
-
-    const [backed, setBacked] = useState("89,914");
+console.log(value, typeof value)
+    const [backed, setBacked] = useState(89.914);
     const [backers, setBackers] = useState("5,007");
     const [days, setDays] = useState("56");
 
     useEffect(()=>{
-       console.log(typeof backed, typeof value)
-    })
+        if(backed && value !== undefined){
+            setBacked(backed + value)
+            console.log(typeof backed, typeof value)
+        }
+    }, [value]);
 
     return(
         <div className="counter">

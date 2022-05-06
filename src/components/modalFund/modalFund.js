@@ -2,8 +2,9 @@ import React, { useState, useCallback} from "react";
 import "./modalFund.css"
 import ModalSubmit from "../modalSubmit/modalSubmit";
 
-function ModalFund({visible, handleClick, pledge, pledgetwo}){
+function ModalFund({visible, handleClick}){
     let selected = ""
+    let inputValue = 0
     const [sel, setSel] = useState(selected)
 
     const [pledgeValue1, setPledgeValue] = useState(25);
@@ -16,25 +17,27 @@ function ModalFund({visible, handleClick, pledge, pledgetwo}){
    setSel(selected)
  }
 const pledge1 = (e)=>{
-    setPledgeValue(e.target.value)
+    inputValue=  Number(e.target.value)
 }
 
 const pledge2 = (e)=>{
     setPledgeValue2(e.target.value)
 }
 
- const submit =()=>{
-     console.log("strada")
-     handleClick(pledgeValue1)
+ const submit =(e)=>{
      setSubmitModal(true)
+     handleClick(inputValue)
  }
+
 
  const close = useCallback(() => {
     setSubmitModal(false)
    }, []);
 
+
     return(
         <>
+
 <div className={visible ? "modal" : "modalNone"}>
     <p className="close" onClick={handleClick}>x</p>
     <h3>Back this project</h3>
@@ -66,7 +69,7 @@ const pledge2 = (e)=>{
 {/* window that opens when item selected */}
 <div className={sel === "2" ? "pledge" : "noShow"}>
     <p>Enter your pledge</p>
-    <input type="number" className="inputPledge" min="25" step="1" defaultValue="25" onChange={pledge1}/>
+    <input type="number" className="inputPledge" min="25" step="1" defaultValue={pledgeValue1} onChange={pledge1}/>
     <button type="submit" onClick ={submit} >Continue</button>
     </div>
 

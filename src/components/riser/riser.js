@@ -26,12 +26,14 @@ function Riser(){
         )
     }
 
-const handleClick = useCallback((value25, ) => {
+const handleClick = useCallback((value25 ) => {
+    console.log(value25)
    setVisible(false)
    setValue(value25)
   }, []);
 
     return(
+        console.log(value),
         <>
 <div className="riser">
     <div className="logo"/>

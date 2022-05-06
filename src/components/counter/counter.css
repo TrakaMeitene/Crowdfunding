@@ -34,19 +34,19 @@ input[type="range"] {
     width: 100%;
 }
 
-input[type="range"]::-webkit-slider-runnable-track{
-    background: hsl(0, 0%, 77%);
+input[type="range"]::-webkit-slider-runnable-track{ 
+    background: hsl(180, 1%, 74%);
     height: 0.8rem;
     border-radius:20px;
-  }
+  } 
 
-  input[type="range"]::-webkit-slider-thumb {
+   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     margin-top: -12px; /* Centers thumb on the track */
     background-color: #5cd5eb;
     height: 2rem;
     width: 1rem;     
- }
-
+ }  
+ 
  
