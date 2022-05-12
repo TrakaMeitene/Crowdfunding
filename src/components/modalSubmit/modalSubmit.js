@@ -3,7 +3,6 @@ import "./modalSubmit.css";
 import checkmark from "../../utilities/icon-check.svg";
 
 function ModalSubmit({ close}){
-    console.log(close)
 
 return(
 <div className="modalSubmit">

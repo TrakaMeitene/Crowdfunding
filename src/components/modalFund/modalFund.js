@@ -5,28 +5,44 @@ import ModalSubmit from "../modalSubmit/modalSubmit";
 function ModalFund({visible, handleClick}){
     let selected = ""
     let inputValue = 0
+    let inputValue2 = 0
     const [sel, setSel] = useState(selected)
 
     const [pledgeValue1, setPledgeValue] = useState(25);
     const [pledgeValue2, setPledgeValue2] = useState(75);
 
     const [submitModal, setSubmitModal] = useState(false);
-  
+  const defaultTwenty = 25
+
  const check=(e)=>{
    selected = e.target.id
    setSel(selected)
  }
 const pledge1 = (e)=>{
     inputValue=  Number(e.target.value)
+    if(inputValue < 25){
+     e.target.value = 25
+    } else {
+            setPledgeValue(inputValue)
+        }
 }
 
 const pledge2 = (e)=>{
-    setPledgeValue2(e.target.value)
+    inputValue2=  Number(e.target.value)
+    if(inputValue2 < 75){
+     e.target.value = 75
+    } else {
+            setPledgeValue2(inputValue2)
+        }
 }
 
  const submit =(e)=>{
-     setSubmitModal(true)
-     handleClick(inputValue)
+    setSubmitModal(true)
+     if(e.target.id === "25"){
+     handleClick(pledgeValue1)
+     } else {
+         handleClick(pledgeValue2)
+     }
  }
 
 
@@ -34,10 +50,8 @@ const pledge2 = (e)=>{
     setSubmitModal(false)
    }, []);
 
-
     return(
         <>
-
 <div className={visible ? "modal" : "modalNone"}>
     <p className="close" onClick={handleClick}>x</p>
     <h3>Back this project</h3>
@@ -69,8 +83,8 @@ const pledge2 = (e)=>{
 {/* window that opens when item selected */}
 <div className={sel === "2" ? "pledge" : "noShow"}>
     <p>Enter your pledge</p>
-    <input type="number" className="inputPledge" min="25" step="1" defaultValue={pledgeValue1} onChange={pledge1}/>
-    <button type="submit" onClick ={submit} >Continue</button>
+    <input type="number" className="inputPledge" onBlur={pledge1} defaultValue={25} min={25} max={100}/>
+    <button type="submit" id="25" onClick={submit}>Continue</button>
     </div>
 
 </div>
@@ -92,10 +106,8 @@ You'll be added to our Backer member list. Shipping is included.</p>
 </div>
 <div className={sel === "3" ? "pledge" : "noShow"}>
     <p>Enter your pledge</p>
-    <form>
-    <input type="number" className="inputPledge" min="75" step="1" defaultValue="75" onChange={pledge2}/>
-    <button type="submit" >Continue</button>
-    </form>
+    <input type="number" className="inputPledge" min="75" step="1" defaultValue="75" onBlur={pledge2}/>
+    <button type="submit" id="75" onClick={submit}>Continue</button>
     </div>
 </div>
 
