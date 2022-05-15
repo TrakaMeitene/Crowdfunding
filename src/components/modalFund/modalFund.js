@@ -2,7 +2,8 @@ import React, { useState, useCallback} from "react";
 import "./modalFund.css"
 import ModalSubmit from "../modalSubmit/modalSubmit";
 
-function ModalFund({visible, handleClick}){
+function ModalFund({visible, handleClick, klase}){
+    console.log(klase)
     let selected = ""
     let inputValue = 0
     let inputValue2 = 0
@@ -12,7 +13,7 @@ function ModalFund({visible, handleClick}){
     const [pledgeValue2, setPledgeValue2] = useState(75);
 
     const [submitModal, setSubmitModal] = useState(false);
-  const defaultTwenty = 25
+
 
  const check=(e)=>{
    selected = e.target.id
@@ -39,21 +40,25 @@ const pledge2 = (e)=>{
  const submit =(e)=>{
     setSubmitModal(true)
      if(e.target.id === "25"){
-     handleClick(pledgeValue1)
+     handleClick(pledgeValue1, submitModal)
      } else {
-         handleClick(pledgeValue2)
+         handleClick(pledgeValue2, submitModal)
      }
  }
 
 
  const close = useCallback(() => {
     setSubmitModal(false)
-   }, []);
+    handleClick(0, submitModal)
+   }, [submitModal]);
 
+   const closed = ()=>{
+       handleClick(0, !submitModal)
+   }
     return(
         <>
 <div className={visible ? "modal" : "modalNone"}>
-    <p className="close" onClick={handleClick}>x</p>
+    <p className="close" onClick={closed}>x</p>
     <h3>Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 <div className={sel === "1" ? "green" : "borderedWindows"}>

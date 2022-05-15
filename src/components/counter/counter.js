@@ -14,7 +14,7 @@ function Counter({value}){
 
     //eslint-disable-next-line
 useEffect(()=>{
-    if(backed && value !== undefined){
+    if(backed && value !== undefined ){
     setPersentage(Math.round(rangeVal))
     }else { setPersentage(backed)}
     if(value !== undefined){
@@ -23,10 +23,9 @@ useEffect(()=>{
     //eslint-disable-next-line
 }, [value])
 
-// const valChange =(e)=>{
-// setPersentage(rangeVal)
-// }
-
+if(percentage === NaN){
+    setPersentage(backed)
+}
     return(
         <div className="counter">
 <div className="count">

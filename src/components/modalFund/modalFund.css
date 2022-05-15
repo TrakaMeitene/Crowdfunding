@@ -10,9 +10,7 @@
     margin: 0 25% 0 25%;
 }
 
-/* .mask{
-    mask-image: linear-gradient(black, transparent);
-} */
+
 .modalNone{
     display: none;
 }

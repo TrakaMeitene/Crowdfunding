@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./modalSubmit.css";
 import checkmark from "../../utilities/icon-check.svg";
 
 function ModalSubmit({ close}){
+
 
 return(
 <div className="modalSubmit">

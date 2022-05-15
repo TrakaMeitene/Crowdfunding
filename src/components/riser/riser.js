@@ -3,7 +3,7 @@ import React,  { useEffect, useState, useCallback} from "react"
 import ModalFund from "../modalFund/modalFund"
 import Counter from "../counter/counter"
 
-function Riser(){
+function Riser({modalMask}){
 
     let book = "Bookmark"
     let booked2 = "Bookmarked"
@@ -12,8 +12,9 @@ function Riser(){
     const [toggle, setToggle] = useState(true);
     const [visible, setVisible] = useState(false);
     const [value, setValue] = useState();
+    const [submitMask, setSumbitMask] = useState(false)
 
-    useEffect(()=> { }, [toggle]);
+    useEffect(()=> {   modalMask(visible, submitMask)}, [toggle, visible, submitMask]);
 
     const booked=()=>{
     return( 
@@ -22,17 +23,15 @@ function Riser(){
 
     const modalopen=()=>{
         return (
-        setVisible(true),
-         document.body.className = "mask"
+        setVisible(true)
         )
     }
 
-const handleClick = useCallback((value25) => {
- console.log(value25)
+const handleClick = useCallback((value25, submitModal) => {
    setVisible(false)
    setValue(value25)
-   
-  }, []);
+setSumbitMask(!submitModal)
+  });
 
     return(
         <>

@@ -11,3 +11,15 @@ body{
 /* body{
   mask-image: linear-gradient(black, transparent);
 } */
+.mask{
+    mask-image: linear-gradient(black, transparent);
+}
+.maska{
+  width:100%;
+  height:180vh;
+  position:absolute;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 4;
+  top:-1vh;
+}
