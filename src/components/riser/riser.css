@@ -2,8 +2,8 @@
     width:50%;
     border:1px solid hsl(0, 0%, 77%);
 /* height:300px; */
-position:absolute;
-margin:0 25% 0 25%;
+/* position:absolute; */
+margin:0 25% 30px 25%;
 margin-top: -100px;
 background-color: white;
 border-radius: 20px;
@@ -28,11 +28,14 @@ p{
 }
 button{
     padding:15px 25px 15px 25px;
-    background-color: hsl(176, 72%, 28%);
+    background-color: hsl(176, 51%, 47%);
     border-radius:50px;
     border:none;
     color: white;
     font-weight:700;
+}
+button:hover{
+    background-color: hsl(176, 72%, 28%);
 }
 .buttons{
     width:100%;
@@ -55,3 +58,8 @@ button{
     background-image: url(../../utilities/icon-bookmark\ copy.svg);
 }
 
+.column{
+    display: flex;
+    flex-direction: column;
+
+}

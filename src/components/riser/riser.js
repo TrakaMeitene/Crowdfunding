@@ -2,6 +2,7 @@ import "./riser.css"
 import React,  { useEffect, useState, useCallback} from "react"
 import ModalFund from "../modalFund/modalFund"
 import Counter from "../counter/counter"
+import About from "../about/about"
 
 function Riser({modalMask}){
 
@@ -34,7 +35,7 @@ setSumbitMask(!submitModal)
   });
 
     return(
-        <>
+        <div className="column">
 <div className="riser">
     <div className="logo"/>
     <h2>Mastercraft Bamboo Monitor Riser</h2>
@@ -46,7 +47,8 @@ setSumbitMask(!submitModal)
 </div>
 <ModalFund visible={visible}  handleClick={handleClick} />
 <Counter value={value}/>
-  </>
+<About handleClick={handleClick} modalopen={modalopen}/>
+  </div>
 
 )
 }

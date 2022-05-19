@@ -6,7 +6,7 @@
 body{
   font-family: 'Commissioner', sans-serif;
   background-color: hsl(0, 0%, 98%);
- height:100vh;
+ height:auto;
 }
 /* body{
   mask-image: linear-gradient(black, transparent);

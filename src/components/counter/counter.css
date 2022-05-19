@@ -1,8 +1,8 @@
 .counter{
     width:50%;
     border:1px solid hsl(0, 0%, 77%);
-position:absolute;
-margin:13% 25% 0 25%;
+/* position:absolute; */
+margin:0 25% 30px 25%;
 background-color: white;
 border-radius:20px;
 display:flex;
