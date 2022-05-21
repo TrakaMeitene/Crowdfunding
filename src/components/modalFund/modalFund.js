@@ -1,9 +1,9 @@
-import React, { useState, useCallback} from "react";
+import React, { useState, useCallback, useEffect} from "react";
 import "./modalFund.css"
 import ModalSubmit from "../modalSubmit/modalSubmit";
 import ModalInputs from "../pledgeInputs/pledgeInputs"
 
-function ModalFund({visible, handleClick}){
+function ModalFund({visible, handleClick, selectedFromAbout}){
 
     let selected = ""
     let inputValue = 0
@@ -15,8 +15,12 @@ function ModalFund({visible, handleClick}){
 
     const [submitModal, setSubmitModal] = useState(false);
 
+useEffect(()=>{
+   setSel(selectedFromAbout)
+})
 
  const check=(e)=>{
+    console.log("strada", e.target.id)
    selected = e.target.id
    setSel(selected)
  }
@@ -56,6 +60,7 @@ const pledge2 = (e)=>{
    const closed = ()=>{
        handleClick(0, !submitModal)
    }
+
     return(
         <>
 <div className={visible ? "modal" : "modalNone"}>

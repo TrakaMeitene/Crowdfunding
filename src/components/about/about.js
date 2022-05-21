@@ -4,11 +4,15 @@ import ModalFund from "../modalFund/modalFund"
 
 function About({handleClick, modalopen}){
 
+    let selectedId = ""
 const [visible, setVisible] = useState(false)
-    // const modalopen=()=>{
-    //     setVisible(true)
-
-    // }
+const [selected, setSelected] = useState("")
+  
+    const check=(e)=>{
+        selectedId = e.target.id
+        setSelected(selectedId)
+        modalopen(selectedId)
+      }
 
     return(
         <>
@@ -30,7 +34,7 @@ Featuring artisan craftsmanship, the simplicity of design creates extra desk spa
 <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</p>
 </div>
 </div>
-<div className="static-header"><span><h1>101</h1><p>left</p></span><button onClick={modalopen}>Select Reward</button></div>
+<div className="static-header"><span><h1>101</h1><p>left</p></span><button id="2" onClick={check}>Select Reward</button></div>
 </div>
 {/* otrais logs */}
 <div className="borderedWindows">
@@ -44,7 +48,7 @@ Featuring artisan craftsmanship, the simplicity of design creates extra desk spa
 You'll be added to our Backer member list. Shipping is included.</p>
 </div>
 </div>
-<div className="static-header"><span><h1>64</h1><p>left</p></span><button>Select Reward</button></div>
+<div className="static-header"><span><h1>64</h1><p>left</p></span><button id="3" onClick={check}>Select Reward</button></div>
 </div>
 {/* trešais logs */}
 <div className="borderedWindows">
@@ -58,11 +62,10 @@ You'll be added to our Backer member list. Shipping is included.</p>
 thank you. You'll be added to our Backer member list. Shipping is included,</p>
 </div>
 </div>
-<div className="static-header"><span><h1>0</h1><p>left</p></span><button>Select Reward</button></div>
+<div className="static-header"><span><h1>0</h1><p>left</p></span><button disabled>Select Reward</button></div>
 </div>
 
         </div>
-       <ModalFund visible={visible} handleClick={handleClick} />
         </>
         )
         }

@@ -12,7 +12,6 @@ const [submitModalMask, setSubmitModalMask] = useState(true)
 
 
   const modalMask= useCallback((visible, modal)=>{
-    console.log(visible)
     setModalMask(visible)
 setSubmitModalMask(modal)
 window.scrollTo(0, 0)
