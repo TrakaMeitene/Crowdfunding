@@ -1,8 +1,6 @@
 .riser{
     width:50%;
     border:1px solid hsl(0, 0%, 77%);
-/* height:300px; */
-/* position:absolute; */
 margin:0 25% 30px 25%;
 margin-top: -100px;
 background-color: white;
@@ -11,8 +9,7 @@ border-radius: 20px;
 .logo{
     background-image: url(../../utilities/logo-mastercraft.svg);
     background-size: cover;
-    position:absolute;
-    margin:-4% 45% 0 45%;
+    margin: -4% 45% 0 45%;
     width:65px;
     height:65px;
     border-radius: 50%;
@@ -34,7 +31,8 @@ button{
     color: white;
     font-weight:700;
 }
-button:hover{
+button:hover:not(.bookmark, .grey button){
+
     background-color: hsl(176, 72%, 28%);
 }
 .buttons{
