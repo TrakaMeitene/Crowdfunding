@@ -13,6 +13,11 @@ function ModalInputs({ check, selected, pledge1, pledge2, submit }) {
                         <p>Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
                     </div>
                 </div>
+                <div className={selected === "1" ? "pledge" : "noShow"}>
+                    <input type="email" placeholder="example@domain.com" />
+                    <button type="submit" id="0" onClick={submit}>Continue</button>
+                </div>
+
             </div>
             {/* otrais logs */}
             <div className={selected === "2" ? "green" : "borderedWindows"}>

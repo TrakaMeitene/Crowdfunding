@@ -51,9 +51,10 @@ function ModalFund({ visible, handleClick, selectedid}) {
         setSubmitModal(true)
         if (e.target.id === "25") {
             handleClick(pledgeValue1, submitModal)
-        } else {
+        } else if(e.target.id === "75"){
             handleClick(pledgeValue2, submitModal)
-        }
+        } else (
+            handleClick(0, submitModal))
         setSel("off")
     }
 
