@@ -43,7 +43,7 @@ function Counter({ value }) {
                 </div>
             </div>
 
-            <div>
+            <div className="mobile-range">
                 <input type="range" value={percentage} onChange={() => { }} />
             </div>
 

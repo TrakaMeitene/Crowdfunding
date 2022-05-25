@@ -73,6 +73,7 @@ border-radius:20px;
 height: 20%;
 justify-content: space-evenly;
 top:12%;
+box-shadow: 10px 10px 20px grey;
     }
     ul li{
         color: black;

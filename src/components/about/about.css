@@ -38,3 +38,30 @@ span h1{
     background-color: grey;
     opacity: 0.5;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .about{
+        width:90%;
+     margin:auto;
+    }
+    .about > p, .row div > p, .static-header span > p {
+       padding:0;
+       line-height: 1.5;
+    }
+    .static-header{
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+            padding-bottom:20px;
+    }
+    h4{
+        margin:0;
+        line-height: 2;
+    }
+    .static-header > button{
+        width:160px;
+        font-size: 0.9em;
+    }
+
+}

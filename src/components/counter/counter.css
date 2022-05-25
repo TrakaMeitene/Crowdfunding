@@ -1,7 +1,6 @@
 .counter{
     width:50%;
     border:1px solid hsl(0, 0%, 77%);
-/* position:absolute; */
 margin:0 25% 30px 25%;
 background-color: white;
 border-radius:20px;
@@ -50,4 +49,33 @@ input[type="range"] {
     height: 40px;
     background: hsl(176, 51%, 47%);
     box-shadow: -100vw 0 0 100vw hsl(176, 51%, 47%);
+}
+
+@media only screen and (max-width: 600px) {
+    .count{
+flex-direction: column;
+height:auto;
+width:90%;
+align-items: center;
+    }
+    .counter{
+        width:90%;
+        margin:auto;
+        margin-bottom:15px;
+        justify-content: center;
+        align-items: center;
+    }
+    .count div{
+            width:auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .mobile-range{
+            width:100%;
+        }
+        .count div:not(.last){
+            border-bottom: 1px solid hsl(0, 0%, 77%);
+            border-right: none;
+        }
 }

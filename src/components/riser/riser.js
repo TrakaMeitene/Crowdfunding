@@ -9,6 +9,7 @@ function Riser({ modalMask }) {
     let book = "Bookmark"
     let booked2 = "Bookmarked"
     let greenBookmark = "bookmark active-state"
+    let greenMobileBookmark = "mobile-bookmark active-state"
 
 
     const [toggle, setToggle] = useState(true);
@@ -46,6 +47,7 @@ function Riser({ modalMask }) {
                 <div className="buttons">
                     <button onClick={modalopen}>Back this project</button>
                     <button onClick={booked} className={toggle ? "bookmark" : greenBookmark}>{toggle ? book : booked2}</button>
+               <button onClick={booked} className={toggle ? "mobile-bookmark" : greenMobileBookmark} />
                 </div>
             </div>
             <ModalFund visible={visible} handleClick={handleClick} selectedid={selected} />

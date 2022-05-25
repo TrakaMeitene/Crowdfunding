@@ -65,7 +65,7 @@ button:hover:not(.bookmark, .grey button){
 @media only screen and (max-width: 600px) {
     .riser{
         width:90%;
-        margin: -100px auto 0 auto;
+        margin: -100px auto 15px auto;
     }
     .logo{ 
         margin: -7% auto 0 auto;
@@ -87,6 +87,8 @@ button:hover:not(.bookmark, .grey button){
         border:none;
         color: white;
         font-weight:700;
+        font-size: 1.2em;
+        width: 220px;
     }
     button:hover:not(.bookmark, .grey button){
     
@@ -97,17 +99,22 @@ button:hover:not(.bookmark, .grey button){
         display:flex;
         flex-direction: row;
         align-items:  center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 20px 30px 30px 30px;
     }
     .bookmark{
-        background-color: hsl(0, 0%, 95%);
-        color:hsl(176, 72%, 28%);
-        width:160px;
-        padding-left:60px;
+        display: none;
+    }
+    .mobile-bookmark{
+        display: inline;
+        background-color: none;
+        color:none;
+        width:0px;
+        padding: 50px 50px 0px 0px;
         background-image: url(../../utilities/icon-bookmark.svg);
         background-size:contain;
         background-repeat: no-repeat;
+        padding-bottom:0;
     }
     .active-state{
         background-image: url(../../utilities/icon-bookmark\ copy.svg);
