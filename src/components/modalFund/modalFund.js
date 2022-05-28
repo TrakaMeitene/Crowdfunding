@@ -16,7 +16,8 @@ function ModalFund({ visible, handleClick, selectedid}) {
     let inputValue2 = 0
     const [sel, setSel] = useState("off")
 
-   useEffect(() => {setSel(selectedid)}, [selectedid])
+   useEffect(() => {setSel(selectedid)
+     console.log(window.innerHeight)}, [selectedid])
 
     const [pledgeValue1, setPledgeValue] = useState(25);
     const [pledgeValue2, setPledgeValue2] = useState(75);

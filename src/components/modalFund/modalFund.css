@@ -122,3 +122,24 @@ input[type=email] {
     height: 45px;
     width: 200px;
 }
+
+@media only screen and (max-width: 600px) {
+    .modal{
+        width:90%;
+        padding: 40px 30px 0 30px;
+        margin: 0 5% 0 5%;
+    }
+    .modal>p{
+        padding: 0 0px 0 0px;
+    }
+    .modal-header > span{
+        display:flex;
+        flex-direction: column;
+        margin-top: -20px;
+    }
+.modal-header>span>p{
+    padding:0;
+}
+
+
+}

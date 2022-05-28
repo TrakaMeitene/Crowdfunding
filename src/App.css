@@ -8,9 +8,7 @@ body{
   background-color: hsl(0, 0%, 98%);
  height:auto;
 }
-/* body{
-  mask-image: linear-gradient(black, transparent);
-} */
+
 .mask{
     mask-image: linear-gradient(black, transparent);
 }
@@ -22,4 +20,10 @@ body{
   opacity: 0.5;
   z-index: 4;
   top:-1vh;
+}
+
+@media screen and (max-width: 600px) {
+  .maska{
+    height:467vh;
+  }
 }

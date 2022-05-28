@@ -29,7 +29,7 @@ function ModalInputs({ check, selected, pledge1, pledge2, submit }) {
                                 <h4>Bamboo Stand</h4>
                                 <p className="greenText">Pledge $25 or more</p>
                             </span>
-                            <p><b>101</b>left</p>
+                            <p className="count-bottom"><b>101</b>left</p>
                         </div>
                         <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer member list.</p>
                     </div>
@@ -52,7 +52,7 @@ function ModalInputs({ check, selected, pledge1, pledge2, submit }) {
                                 <h4>Black Edition Stand</h4>
                                 <p className="greenText">Pledge $75 or more</p>
                             </span>
-                            <p><b>64</b>left</p>
+                            <p className="count-bottom"><b>64</b>left</p>
                         </div>
                         <p>You get a Black Special Edition computer stand and a personal thank you.
                             You'll be added to our Backer member list. Shipping is included.</p>
@@ -74,7 +74,7 @@ function ModalInputs({ check, selected, pledge1, pledge2, submit }) {
                                 <h4>Mahogany Special Edition</h4>
                                 <p className="greenText">Pledge $200 or more</p>
                             </span>
-                            <p><b>0</b>left</p>
+                            <p className="count-bottom"><b>0</b>left</p>
                         </div>
                         <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal
                             thank you. You'll be added to our Backer member list. Shipping is included,</p>
