@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 
 function ModalInputs({ check, selected, pledge1, pledge2, submit, visible}) {
 
-    useEffect (() => {console.log(selected)}, [selected])
+    useEffect (() => {}, [selected])
     return (
         <>
             {/* pirmais logs */}
