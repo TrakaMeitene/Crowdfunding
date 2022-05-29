@@ -12,7 +12,7 @@ setOpen(current => !current)
 <div className="header">
     <nav>
         <p>crowdfund</p>
-        <div className={open ? "closemenu" : "hamburger"} onClick={menu}></div>
+        <div className={open ? "closemenu" : "hamburger"} onClick={menu}/>
         <ul className={open ? "" : "none"}>
             <li>About</li>
             <li>Discover</li>

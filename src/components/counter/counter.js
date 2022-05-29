@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "../counter/counter.css";
 
-function Counter({ value }) {
+function Counter({ value, visible }) {
 
     const [backed, setBacked] = useState(89.914);
-    const [backers, setBackers] = useState("5,007");
-    const [days, setDays] = useState("56");
+    const [backers, setBackers] = useState(5007);
+    const [days] = useState("56");
 
-    let val = backed + value
     let rangeVal = ((backed + value) / 100.000) * 100
 
+    let backersCount = backers + 1
     const [percentage, setPersentage] = useState(Math.round(backed));
 
-    //eslint-disable-next-line
     useEffect(() => {
         if (backed && value !== undefined) {
             setPersentage(Math.round(rangeVal))
@@ -23,9 +22,18 @@ function Counter({ value }) {
         //eslint-disable-next-line
     }, [value])
 
-    if (percentage === NaN) {
+
+    useEffect(() => {
+        if (visible) {
+            setBackers(backersCount)
+        }
+        //eslint-disable-next-line
+    }, [visible])
+
+    if (isNaN(percentage)) {
         setPersentage(backed)
     }
+
     return (
         <div className="counter">
             <div className="count">
@@ -34,7 +42,7 @@ function Counter({ value }) {
                     <p>of $100,000 backed</p>
                 </div>
                 <div>
-                    <h2>{backers}</h2>
+                    <h2>{backers.toLocaleString('de-DE')}</h2>
                     <p>total backers</p>
                 </div>
                 <div className="last">

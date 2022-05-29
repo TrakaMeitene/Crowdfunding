@@ -3,21 +3,21 @@ import "./modalFund.css"
 import ModalSubmit from "../modalSubmit/modalSubmit";
 import ModalInputs from "../pledgeInputs/pledgeInputs"
 import PropTypes from 'prop-types';
+import closeX from '../../utilities/icon-close-modal.svg'
 
 ModalFund.propTypes = {
     visible: PropTypes.bool,
     handleClick: PropTypes.func,
 }
 
-function ModalFund({ visible, handleClick, selectedid}) {
+function ModalFund({ visible, handleClick, selectedid }) {
 
-   let selected = ""
+    let selected = ""
     let inputValue = 0
     let inputValue2 = 0
     const [sel, setSel] = useState("off")
 
-   useEffect(() => {setSel(selectedid)
-     console.log(window.innerHeight)}, [selectedid])
+    useEffect(() => { setSel(selectedid) }, [selectedid])
 
     const [pledgeValue1, setPledgeValue] = useState(25);
     const [pledgeValue2, setPledgeValue2] = useState(75);
@@ -52,7 +52,7 @@ function ModalFund({ visible, handleClick, selectedid}) {
         setSubmitModal(true)
         if (e.target.id === "25") {
             handleClick(pledgeValue1, submitModal)
-        } else if(e.target.id === "75"){
+        } else if (e.target.id === "75") {
             handleClick(pledgeValue2, submitModal)
         } else (
             handleClick(0, submitModal))
@@ -64,21 +64,22 @@ function ModalFund({ visible, handleClick, selectedid}) {
         setSubmitModal(false)
         handleClick(0, submitModal)
 
-    }, [submitModal]);
+    }, [submitModal, handleClick]);
 
     //close modal fund window
+    //eslint-disable-next-line
     const closed = useCallback(() => {
-        setSel("off")
+        setSel(sel)
         handleClick(0, !submitModal)
-    })
+    });
 
     return (
         <>
             <div className={visible ? "modal" : "modalNone"}>
-                <p className="close" onClick={closed}>x</p>
+                <img alt="close" className="close" onClick={closed} src={closeX} />
                 <h3>Back this project</h3>
                 <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-                <ModalInputs check={check} selected={sel} pledge1={pledge1} pledge2={pledge2} submit={submit} />
+                <ModalInputs check={check} selected={sel} pledge1={pledge1} pledge2={pledge2} submit={submit} visible={visible} />
             </div>
             {submitModal ? <ModalSubmit close={close} /> : ""}
         </>

@@ -18,7 +18,7 @@ function Riser({ modalMask }) {
     const [submitMask, setSumbitMask] = useState(false)
     const [selected, setSelected] = useState("off")
 
-    useEffect(() => { modalMask(visible, submitMask) }, [toggle, visible, submitMask]);
+    useEffect(() => { modalMask(visible, submitMask) }, [toggle, visible, submitMask, modalMask]);
 
 
     const booked = () => {
@@ -32,11 +32,11 @@ function Riser({ modalMask }) {
         setSelected(selectedId)
     }
 
-    const handleClick = useCallback((value25, submitModal, sel) => {
+    const handleClick = useCallback((value25, submitModal) => {
         setVisible(false)
         setValue(value25)
         setSumbitMask(!submitModal)
-    });
+    }, [])
 
     return (
         <div className="column">
@@ -51,7 +51,7 @@ function Riser({ modalMask }) {
                 </div>
             </div>
             <ModalFund visible={visible} handleClick={handleClick} selectedid={selected} />
-            <Counter value={value} />
+            <Counter value={value} visible={visible}/>
             <About modalopen={modalopen} />
         </div>
 

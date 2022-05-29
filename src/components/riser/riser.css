@@ -1,132 +1,150 @@
-.riser{
-    width:50%;
-    border:1px solid hsl(0, 0%, 77%);
-margin:0 25% 30px 25%;
-margin-top: -100px;
-background-color: white;
-border-radius: 20px;
+.riser {
+    width: 50%;
+    border: 1px solid hsl(0, 0%, 77%);
+    margin: 0 25% 30px 25%;
+    margin-top: -100px;
+    background-color: white;
+    border-radius: 20px;
 }
-.logo{
+
+.logo {
     background-image: url(../../utilities/logo-mastercraft.svg);
     background-size: cover;
-    margin:-4% auto 0 auto;
-    width:65px;
-    height:65px;
+    margin: -4% auto 0 auto;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
 }
-h2{
+
+h2 {
     text-align: center;
-    padding-top:40px;
+    padding-top: 40px;
     font-size: 1.7em;
-    font-weight:700;
+    font-weight: 700;
 }
-p{
-    color:hsl(0, 0%, 57%);
+
+p {
+    color: hsl(0, 0%, 57%);
 }
-button{
-    padding:15px 25px 15px 25px;
+
+button {
+    padding: 15px 25px 15px 25px;
     background-color: hsl(176, 51%, 47%);
-    border-radius:50px;
-    border:none;
+    border-radius: 50px;
+    border: none;
     color: white;
-    font-weight:700;
+    font-weight: 700;
 }
-button:hover:not(.bookmark, .grey button){
+
+button:hover:not(.bookmark, .grey button) {
 
     background-color: hsl(176, 72%, 28%);
 }
-.buttons{
-    width:100%;
-    display:flex;
+
+.buttons {
+    width: 100%;
+    display: flex;
     flex-direction: row;
-    align-items:  center;
+    align-items: center;
     justify-content: space-between;
     padding: 20px 30px 30px 30px;
 }
-.bookmark{
+
+.bookmark {
     background-color: hsl(0, 0%, 95%);
-    color:hsl(176, 72%, 28%);
-    width:160px;
-    padding-left:60px;
+    color: hsl(176, 72%, 28%);
+    width: 160px;
+    padding-left: 60px;
     background-image: url(../../utilities/icon-bookmark.svg);
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
 }
-.active-state{
+
+.active-state {
     background-image: url(../../utilities/icon-bookmark\ copy.svg);
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
 
 }
-.mobile-bookmark{
-    display:none;
+
+.mobile-bookmark {
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {
-    .riser{
-        width:90%;
+    .riser {
+        width: 90%;
         margin: -100px auto 15px auto;
     }
-    .logo{ 
+
+    .logo {
         margin: -7% auto 0 auto;
     }
-    h2{
+
+    h2 {
         text-align: center;
         font-size: 1.5em;
-        font-weight:700;
+        font-weight: 700;
         padding: 0 60px 0 60px;
     }
-    p{
+
+    p {
         padding: 0 30px 0 30px;
-        color:hsl(0, 0%, 57%);
+        color: hsl(0, 0%, 57%);
     }
-    button{
-        padding:15px 25px 15px 25px;
+
+    button {
+        padding: 15px 25px 15px 25px;
         background-color: hsl(176, 51%, 47%);
-        border-radius:50px;
-        border:none;
+        border-radius: 50px;
+        border: none;
         color: white;
-        font-weight:700;
-        font-size: 1.2em;
+        font-weight: 700;
+        font-size: 18px;
         width: 220px;
     }
-    button:hover:not(.bookmark, .grey button){
-    
+
+    button:hover:not(.bookmark, .grey button) {
+
         background-color: hsl(176, 72%, 28%);
     }
-    .buttons{
-        width:100%;
-        display:flex;
+
+    .buttons {
+        width: 100%;
+        display: flex;
         flex-direction: row;
-        align-items:  center;
+        align-items: center;
         justify-content: space-evenly;
         padding: 20px 30px 30px 30px;
     }
-    .bookmark{
+
+    .bookmark {
         display: none;
     }
-    .mobile-bookmark{
+
+    .mobile-bookmark {
         display: inline;
         background-color: none;
-        color:none;
-        width:0px;
+        color: none;
+        width: 0px;
         padding: 50px 50px 0px 0px;
         background-image: url(../../utilities/icon-bookmark.svg);
-        background-size:contain;
+        background-size: contain;
         background-repeat: no-repeat;
-        padding-bottom:0;
+        padding-bottom: 0;
     }
-    .active-state{
+
+    .active-state {
         background-image: url(../../utilities/icon-bookmark\ copy.svg);
     }
-    
-    .column{
+
+    .column {
         display: flex;
         flex-direction: column;
-    
+
     }
 
 }
